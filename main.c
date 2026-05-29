@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <math.h>
 #include <raylib.h>
 
@@ -60,7 +59,6 @@ int main(){
         if(massX + SIDE > WIDTH) massX = WIDTH - SIDE;
         else if(massX < 25) massX = 25;
         else massX += velocity * dt;
-        printf("velocity : %f\n", velocity);
 
         DrawLineEx((Vector2){line.startX, line.startY}, (Vector2){line.endX, line.endY}, line.thickness, WHITE);
         DrawRectangleV((Vector2){massX, line.startY - SIDE - line.thickness/2}, (Vector2){SIDE, SIDE}, RED);
@@ -70,6 +68,8 @@ int main(){
     }
 
     CloseWindow();
+
+    return 0;
 }
 
 void drawSpring(float massX)
